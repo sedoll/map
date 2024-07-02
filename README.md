@@ -8,6 +8,15 @@
 
 # result
 
+## img
+![이미지](./res/img/img.png)
+
+## gif
+![gif](./res/gif/recording.gif)
+
+## video
+[영상링크](https://youtu.be/eEV4j7kbvvQ)
+
 # reference
 * [wmts](https://www.vworld.kr/dev/v4dv_wmtsguide_s001.do)
 * [검색](https://www.vworld.kr/dev/v4dv_icbsource_s002.do?pageIndex=1&searchCondition=0&searchKeyword=%EA%B2%80%EC%83%89&searchOrder=0&brdIde=SRC_0000000000000015)
