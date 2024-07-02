@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VWorld Map with Styles</title>
+    <script type="text/javascript"
+        src="https://map.vworld.kr/js/vworldMapInit.js.do?version=2.0&apiKey=${apiKey}"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+    <div id="sidebar">
+        <form id="searchForm" action="#" class="form_data" onsubmit="return false;">
+            <input type="hidden" name="page" value="1" />
+            <input type="hidden" name="type" value="PLACE" />
+            <input type="hidden" name="size" value="1000" />
+            <input type="hidden" name="request" value="search" />
+            <input type="hidden" name="apiKey" value="${apiKey}" />
+
+            <div style="display: flexbox; align-items: center;">
+                <input type="text" id="searchValue" name="query" placeholder="여의도" />
+                <button id="searchButton" class="btn" onclick="search();">검색</button>
+                <span> 결과 : </span>
+                <span id="res-cnt"></span>
+            </div>
+        </form>
+        
+        <div style="margin-top: 20px;">
+            <button class="btn" onclick="changeMapStyle('base')">2D 배경지도</button>
+            <button class="btn" onclick="changeMapStyle('white')">2D 백지도</button>
+            <button class="btn" onclick="changeMapStyle('night')">2D 야간지도</button>
+            <button class="btn" onclick="changeMapStyle('hybrid')">위성지도</button>
+        </div>
+
+        <ul id="searchResults"></ul>
+    </div>
+
+    <div id="map-container">
+        <div id="map" style="height: 100%;"></div>
+        <div class="zoom-level" id="zoom-level">Zoom: 13</div>
+        <div class="scale-line" id="scale-line"></div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
