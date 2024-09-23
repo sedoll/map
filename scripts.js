@@ -18,35 +18,35 @@
             title: 'VWorld Base Map',
             visible: true,
             source: new ol.source.XYZ({
-                url: `http://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Base/{z}/{y}/{x}.png`
+                url: `https://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Base/{z}/{y}/{x}.png`
             })
         }),
         white: new ol.layer.Tile({
             title: 'VWorld White Map',
             visible: false,
             source: new ol.source.XYZ({
-                url: `http://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/white/{z}/{y}/{x}.png`
+                url: `https://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/white/{z}/{y}/{x}.png`
             })
         }),
         night: new ol.layer.Tile({
             title: 'VWorld Night Map',
             visible: false,
             source: new ol.source.XYZ({
-                url: `http://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/midnight/{z}/{y}/{x}.png`
+                url: `https://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/midnight/{z}/{y}/{x}.png`
             })
         }),
         satellite: new ol.layer.Tile({
             title: 'VWorld Hybrid Map',
             visible: false,
             source: new ol.source.XYZ({
-                url: `http://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Satellite/{z}/{y}/{x}.jpeg`
+                url: `https://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Satellite/{z}/{y}/{x}.jpeg`
             })
         }),
         hybrid: new ol.layer.Tile({
             title: 'VWorld Hybrid Map',
             visible: false,
             source: new ol.source.XYZ({
-                url: `http://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Hybrid/{z}/{y}/{x}.png`
+                url: `https://api.vworld.kr/req/wmts/1.0.0/${vworldKey}/Hybrid/{z}/{y}/{x}.png`
             })
         })
     };
@@ -111,7 +111,7 @@
 
         $.ajax({
             type: "get",
-            url: "http://api.vworld.kr/req/search",
+            url: "https://api.vworld.kr/req/search",
             data: serializedData,
             dataType: 'jsonp',
             async: false,
@@ -147,7 +147,7 @@
                             anchor: [0.5, 10],
                             anchorXUnits: 'fraction',
                             anchorYUnits: 'pixels',
-                            src: 'http://map.vworld.kr/images/ol3/marker_blue.png'
+                            src: 'https://map.vworld.kr/images/ol3/marker_blue.png'
                         })
                     });
                     features[o].setStyle(iconStyle);
