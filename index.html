@@ -1,3 +1,4 @@
+<!-- 화면의 움직임에따라 현재 화면의 최대 최소 위도 경도 정보를 추출해줌-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,50 +6,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VWorld Map with Styles</title>
-    <script type="text/javascript"
-        src="https://map.vworld.kr/js/vworldMapInit.js.do?version=2.0&apiKey=${apiKey}"></script>
+    <script type="text/javascript" src="https://map.vworld.kr/js/vworldMapInit.js.do?version=2.0&apiKey=5AED84E4-C740-3AAA-B50B-09ED73DCDF2F"></script>
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
-    <div id="sidebar">
-        <form id="searchForm" action="#" class="form_data" onsubmit="return false;">
-            <input type="hidden" name="page" value="1" />
-            <input type="hidden" name="type" value="PLACE" />
-            <input type="hidden" name="size" value="1000" />
-            <input type="hidden" name="request" value="search" />
-            <input type="hidden" name="apiKey" value="${apiKey}" />
-
-            <div style="display: flexbox; align-items: center;">
-                <input type="text" id="searchValue" name="query" placeholder="여의도" />
-                <button id="searchButton" class="btn" onclick="search();">검색</button>
-                <span> 결과 : </span>
-                <span id="res-cnt"></span>
-            </div>
-        </form>
-        
+    <!-- 사이드 메뉴 -->
+    <div id="sidebar" style="display: block; z-index:10">
+        <div style="display: flexbox; align-items: center;">
+            <input type="text" id="searchValue" name="query" placeholder="검색어를 입력하세요." autocomplete="off"/>
+            <button id="searchButton" class="btn" onclick="search();">검색</button>
+            <span> 결과 : </span>
+            <span id="res-cnt"></span>
+        </div>
+        <div>
+            <input type="checkbox" name="ck" id="ck">
+            <label for="ck">지역내 검색</label>
+        </div>
         <div style="margin-top: 20px;">
             <button class="btn" onclick="changeMapStyle('base')">2D 배경지도</button>
             <button class="btn" onclick="changeMapStyle('white')">2D 백지도</button>
             <button class="btn" onclick="changeMapStyle('night')">2D 야간지도</button>
-            <button class="btn" onclick="changeMapStyle('hybrid')">위성지도</button>
+            <button class="btn" onclick="changeMapStyle('satellite')">위성지도</button>
         </div>
-
-        <ul id="searchResults"></ul>
+        <ul id="searchResults" style="max-height: 600px;"></ul>
+        <div id="pagination" style="text-align: center;"></div>
     </div>
 
+    <!-- 지도 컨테이너 -->
     <div id="map-container">
         <div id="map" style="height: 100%;"></div>
         <div class="zoom-level" id="zoom-level">Zoom: 13</div>
         <div class="scale-line" id="scale-line"></div>
     </div>
 
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="scripts.js"></script>
+    <!-- 토글 버튼 추가 -->
+    <button id="toggleSidebar" style="position: absolute; top: 10px; right: 10px; z-index: 1000;" onclick="toggleSidebar()">사이드바 숨기기</button>
+
+    <script src="./scripts2.js"></script>
 </body>
 
 </html>

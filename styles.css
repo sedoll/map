@@ -6,6 +6,8 @@ body {
 }
 
 #sidebar {
+    position: absolute;
+    height: 100%;
     width: 300px;
     background-color: #f0f0f0;
     padding: 20px;
@@ -62,6 +64,14 @@ body {
     padding: 7px 20px;
     background-color: #007bff;
     color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.page-btn {
+    background-color: #fff;
+    color: #007bff;
     border: none;
     cursor: pointer;
     border-radius: 3px;
@@ -129,6 +139,8 @@ strong {
 
 .zoom-level {
     position: absolute;
+
+    
     bottom: 15px;
     right: 20px;
     background: rgba(255, 255, 255, 0.8);
@@ -139,13 +151,15 @@ strong {
 }
 
 .scale-line {
-    left: auto !important;
-    top: auto !important;
-    bottom: 10px !important;
-    right: 20px !important;
-    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    /* left: auto !important; */
+    /* top: auto !important; */
+    /* bottom: 10px !important; */
+    /* right: 20px !important; */
+    right: 260px;
+    bottom: 8px;
     padding: 5px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 3px;
     font-size: 14px;
 }
